@@ -1,0 +1,187 @@
+/* /src/styles/components/_cards.css */
+
+/* Hub Page Cards */
+.container-card {
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    background-clip: padding-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-card:hover,
+.container-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.2);
+    outline: none;
+    border-color: var(--card-hover-border);
+}
+
+.container-icon {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    width: 48px;
+    height: 48px;
+}
+
+.container-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+.container-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.container-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+
+/* Settings Hub Cards */
+.settings-hub-card {
+    padding: 2.5rem 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+.settings-hub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.2);
+    border-color: var(--card-hover-border);
+}
+.settings-hub-card-icon {
+    color: var(--accent-color);
+    margin: 0 auto 1.5rem;
+}
+.settings-hub-card-title {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+.settings-hub-card-desc {
+    color: var(--text-secondary);
+}
+
+
+/* Management Page Cards */
+.management-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--card-bg);
+}
+.management-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+.management-card:hover, .management-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.2);
+    border-color: var(--card-hover-border);
+    outline: none;
+}
+.management-card:hover .management-card-bg {
+    transform: scale(1.05);
+}
+.management-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+.management-card:hover .management-card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.9) 100%);
+}
+.management-card-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+.management-card-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+
+/* Integrations Tab */
+.integration-card {
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.integration-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+.integration-name {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-family: var(--font-primary);
+}
+
+.image-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+.image-selector-grid .icon-option {
+    aspect-ratio: 16 / 10;
+    padding: 0;
+    overflow: hidden;
+}
+
+.image-selector-grid .icon-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.image-selector-grid .icon-option:hover img {
+    transform: scale(1.05);
+}

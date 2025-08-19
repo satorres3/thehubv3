@@ -1,0 +1,36 @@
+<div id="knowledge-page" class="page-view">
+     <header class="app-header">
+        <div class="header-left">
+            <button id="back-from-knowledge-btn" class="header-icon-btn" aria-label="Back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+        </div>
+    </header>
+    <div class="knowledge-container">
+        <h1 id="knowledge-title">Manage Knowledge</h1>
+        <p id="knowledge-subtitle" class="settings-section-description">Upload text or image files to provide context to the assistant. The content of these files will be included in every request to the AI.</p>
+        <div id="file-dropzone" class="file-dropzone">
+            <div class="dropzone-prompt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <p><strong>Drag & drop files here</strong></p>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                    <hr style="flex-grow: 1; border-color: var(--card-border);">
+                    <span style="color: var(--text-secondary);">OR</span>
+                    <hr style="flex-grow: 1; border-color: var(--card-border);">
+                </div>
+                 <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button id="knowledge-upload-btn" type="button" class="modal-btn modal-btn-secondary">Browse files</button>
+                    <button id="knowledge-add-sharepoint-btn" type="button" class="modal-btn modal-btn-secondary">Add from SharePoint</button>
+                </div>
+            </div>
+        </div>
+        <p class="form-help-text" style="text-align: center; margin-top: -1.5rem; margin-bottom: 2rem;">
+            Supported formats: PDF, TXT, MD, and common image types (JPG, PNG, WEBP). Office documents are not supported.
+        </p>
+        <input type="file" id="knowledge-file-input" class="hidden" multiple accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,text/plain,.md,text/markdown">
+        <div class="settings-section">
+            <h2 class="settings-section-title">Uploaded Files</h2>
+            <div id="knowledge-file-list" class="knowledge-file-list"></div>
+        </div>
+    </div>
+</div>

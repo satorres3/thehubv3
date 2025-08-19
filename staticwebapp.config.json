@@ -1,0 +1,11 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/api/*"]
+  },
+  "apiLocation": "api",
+  "mimeTypes": {
+    ".js": "text/javascript",
+    ".css": "text/css"
+  }
+}

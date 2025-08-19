@@ -1,0 +1,163 @@
+/* /src/styles/components/_sharepoint-picker.css */
+
+.sp-picker-body {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.sp-breadcrumbs {
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.sp-breadcrumb-item {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sp-breadcrumb-item:hover {
+    color: var(--text-primary);
+    background-color: var(--sidebar-highlight-bg);
+}
+
+.sp-breadcrumb-separator {
+    color: var(--text-secondary);
+}
+
+
+.sp-file-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative;
+    padding: 0 1rem; /* Add some side padding */
+}
+
+#sp-loading-spinner {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+}
+#sp-loading-spinner.hidden {
+    display: none;
+}
+
+.sp-file-list {
+    list-style: none;
+}
+
+.sp-list-header, .sp-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* Make header more prominent */
+.sp-list-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-gradient-end);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.sp-list-item {
+    transition: background-color 0.2s ease;
+}
+
+.sp-list-item:hover {
+    background-color: var(--sidebar-highlight-bg);
+}
+
+.sp-item-selector {
+    width: 30px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.sp-item-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--accent-color);
+    display: grid;
+    place-items: center;
+}
+
+.sp-item-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sp-item-name-col {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0; /* Important for flex truncation */
+}
+
+.sp-item-name-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.sp-item-name-btn:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.sp-item-size-col {
+    width: 100px;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.sp-message-item {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+input[type="checkbox"].sp-item-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-color);
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    cursor: pointer;
+}

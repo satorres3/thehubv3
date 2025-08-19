@@ -1,0 +1,34 @@
+/* /src/styles/base/_variables.css */
+
+:root {
+    --bg-gradient-start: #0f0c29;
+    --bg-gradient-mid: #302b63;
+    --bg-gradient-end: #24243e;
+    --card-bg: rgba(26, 26, 46, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-hover-border: rgba(0, 191, 255, 0.5);
+    --text-primary: #f0f0f0;
+    --text-secondary: #a9a9b3;
+    --accent-color: #00bfff;
+    --success-color: #28a745;
+    --danger-color: #ff4757;
+    --danger-color-hover: #ff6b81;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    /* Themable Chat Colors */
+    --user-message-bg: #0077b6;
+    --user-message-text: #ffffff;
+    --bot-message-bg: #1a1a2e;
+    --bot-message-text: #f0f0f0;
+    --sidebar-bg: var(--bg-gradient-start);
+    --sidebar-text: var(--text-secondary);
+    --sidebar-highlight-bg: rgba(0, 191, 255, 0.1);
+    --select-bg: rgba(0,0,0,0.2);
+    --select-border: var(--card-border);
+    --select-text: var(--text-secondary);
+    --accent-color-dynamic: var(--user-message-bg);
+    --accent-hover-bg: var(--sidebar-highlight-bg);
+}

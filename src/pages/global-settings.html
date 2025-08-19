@@ -1,0 +1,161 @@
+<div id="global-settings-page" class="page-view">
+     <header class="app-header">
+        <div class="header-left">
+            <button id="back-to-settings-hub-btn-2" class="header-icon-btn" aria-label="Back to Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+        </div>
+         <div class="header-right">
+            <button class="back-to-hub-btn header-icon-btn" aria-label="Go to Hub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </button>
+        </div>
+    </header>
+    <div class="settings-container">
+        <h1>Global Settings</h1>
+        <nav id="global-settings-tabs" class="settings-tabs">
+            <button class="tab-link active" data-tab="branding">Branding & Appearance</button>
+            <button class="tab-link" data-tab="models">Model Management</button>
+            <button class="tab-link" data-tab="auth">Authentication</button>
+            <button class="tab-link" data-tab="privacy">Privacy & Cookies</button>
+            <button class="tab-link" data-tab="integrations">Integrations</button>
+        </nav>
+        <form id="global-settings-form">
+            <div id="global-settings-panels" class="settings-panels">
+                <div id="tab-panel-branding" class="tab-panel active">
+                     <div class="settings-section">
+                        <div class="appearance-layout">
+                            <div class="appearance-controls">
+                                <h2 class="settings-section-title">Global Branding & Appearance</h2>
+                                <p class="settings-section-description">Customize the main logo and titles for all users.</p>
+                                <div class="form-group">
+                                    <label for="edit-global-logo" class="form-label">Application Logo</label>
+                                    <button type="button" id="edit-global-logo-btn" class="modal-btn modal-btn-secondary">Choose Image...</button>
+                                    <input type="file" id="edit-global-logo-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/svg+xml">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-login-title" class="form-label">Login Page Title</label>
+                                    <input type="text" id="edit-login-title" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-login-subtitle" class="form-label">Login Page Subtitle</label>
+                                    <input type="text" id="edit-login-subtitle" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-hub-header-title" class="form-label">Hub Page Header Title</label>
+                                    <input type="text" id="edit-hub-header-title" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-hub-title" class="form-label">Hub Page Main Title</label>
+                                    <input type="text" id="edit-hub-title" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-hub-subtitle" class="form-label">Hub Page Subtitle</label>
+                                    <input type="text" id="edit-hub-subtitle" class="form-input">
+                                </div>
+                            </div>
+                            <div class="appearance-preview-container">
+                                <div class="settings-section">
+                                    <h2 class="settings-section-title">Live Preview</h2>
+                                    <div id="branding-preview" class="branding-preview">
+                                        <div class="login-container">
+                                            <div id="branding-preview-logo" class="app-logo large">
+                                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="none" stroke="currentColor" stroke-width="5"></path>
+                                                    <path d="M20 35 L50 50 L80 35 M50 50 L50 80" fill="none" stroke="currentColor" stroke-width="4"></path>
+                                                </svg>
+                                            </div>
+                                            <h1 id="branding-preview-title" class="login-title"></h1>
+                                            <p id="branding-preview-subtitle" class="login-subtitle"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-panel-models" class="tab-panel">
+                     <div class="settings-section">
+                        <h2 class="settings-section-title">AI Model Management</h2>
+                        <p class="settings-section-description">Add, edit, or remove the AI models available across the application. The model ID should match the API identifier (e.g., 'gemini-2.5-flash').</p>
+                        <p class="settings-section-description"><strong>Important:</strong> API keys for these models (e.g., GEMINI_API_KEY, GROQ_API_KEY) must be configured securely in the backend environment by an administrator. This UI only manages the list of available models, not the secret keys.</p>
+                        <div id="model-management-list" class="managed-list">
+                            <!-- Dynamically inserted model list -->
+                        </div>
+                        <form id="add-model-form" class="add-item-form">
+                            <input type="text" id="new-model-id" class="form-input" placeholder="Model ID (e.g., brand/model-name)" required>
+                            <input type="text" id="new-model-api" class="form-input" placeholder="API provider (e.g., google)" required>
+                            <input type="text" id="new-model-icon" class="form-input" placeholder="<svg>...</svg>" required>
+                            <button type="submit" class="modal-btn modal-btn-primary">Add Model</button>
+                        </form>
+                     </div>
+                </div>
+                <div id="tab-panel-auth" class="tab-panel">
+                     <div class="settings-section">
+                        <h2 class="settings-section-title">Authentication (OAuth)</h2>
+                        <p class="settings-section-description">Enable or disable third-party login providers. All credentials must be configured via secure environment variables on the server by an administrator.</p>
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">Google Login</h3>
+                             <p class="form-help-text" style="margin-bottom: 1rem;">Note: Google login is currently a client-side mock for demonstration. A full server-side implementation is required for production.</p>
+                            <div class="form-group-row">
+                                <label for="enable-google-login" class="toggle-switch-label">Enable Google Login</label>
+                                <label class="toggle-switch"><input type="checkbox" id="enable-google-login"><span class="slider"></span></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="google-client-id" class="form-label">Google Client ID (from environment)</label>
+                                <input type="text" id="google-client-id" class="form-input" placeholder="Set via GOOGLE_CLIENT_ID environment variable" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="google-client-secret" class="form-label">Google Client Secret (from environment)</label>
+                                <input type="password" id="google-client-secret" class="form-input" placeholder="Set via GOOGLE_CLIENT_SECRET environment variable" disabled>
+                            </div>
+                        </div>
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">Microsoft Login</h3>
+                             <p class="form-help-text" style="margin-bottom: 1rem;">Client ID and Tenant ID are configured via secure environment variables for production deployments (e.g., in Azure Static Web Apps).</p>
+                            <div class="form-group-row">
+                                <label for="enable-microsoft-login" class="toggle-switch-label">Enable Microsoft Login</label>
+                                <label class="toggle-switch"><input type="checkbox" id="enable-microsoft-login"><span class="slider"></span></label>
+                            </div>
+                             <div class="form-group">
+                                <label for="microsoft-client-id" class="form-label">Microsoft Client ID (from environment)</label>
+                                <input type="text" id="microsoft-client-id" class="form-input" placeholder="Set via MSAL_CLIENT_ID environment variable" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="microsoft-client-secret" class="form-label">Microsoft Tenant ID (from environment)</label>
+                                <input type="text" id="microsoft-client-secret" class="form-input" placeholder="Set via MSAL_TENANT_ID environment variable" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-panel-privacy" class="tab-panel">
+                     <div class="settings-section">
+                        <h2 class="settings-section-title">Privacy & Cookies</h2>
+                        <p class="settings-section-description">Manage privacy settings for your users.</p>
+                        <div class="form-group-row">
+                            <label for="enable-cookie-banner" class="toggle-switch-label">Enable Cookie Consent Banner</label>
+                            <label class="toggle-switch"><input type="checkbox" id="enable-cookie-banner"><span class="slider"></span></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="privacy-policy-url" class="form-label">Privacy Policy URL</label>
+                            <input type="url" id="privacy-policy-url" class="form-input" placeholder="https://example.com/privacy">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-panel-integrations" class="tab-panel">
+                    <div class="settings-section">
+                        <h2 class="settings-section-title">Integrations</h2>
+                        <p class="settings-section-description">Globally enable or disable integrations. They can be activated per-container in the container's settings.</p>
+                        <div id="integrations-grid" class="integrations-grid">
+                            <!-- Integration cards will be inserted here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="settings-footer">
+                <button type="button" id="cancel-global-settings-btn" class="modal-btn modal-btn-secondary">Cancel</button>
+                <button type="button" id="save-global-settings-btn" class="modal-btn modal-btn-primary" disabled>Save Changes</button>
+            </footer>
+        </form>
+    </div>
+</div>

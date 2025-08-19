@@ -1,0 +1,26 @@
+<div class="modal-container modal-container-wide">
+    <header class="modal-header">
+        <h2 class="modal-title">Select from SharePoint</h2>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+    </header>
+    <div class="modal-body sp-picker-body">
+        <nav id="sp-breadcrumbs" class="sp-breadcrumbs" aria-label="breadcrumb"></nav>
+        <div class="sp-file-list-container">
+            <div class="sp-list-header">
+                <div class="sp-item-selector"></div> <!-- Placeholder for checkbox alignment -->
+                <div class="sp-item-name-col">Name</div>
+                <div class="sp-item-size-col">Size</div>
+            </div>
+            <div id="sp-loading-spinner" class="spinner hidden"></div>
+            <ul id="sp-file-list" class="sp-file-list">
+                <!-- File and folder items will be injected here -->
+            </ul>
+        </div>
+    </div>
+    <footer class="modal-footer">
+        <button id="sp-cancel-btn" type="button" class="modal-btn modal-btn-secondary">Cancel</button>
+        <button id="sp-add-btn" type="button" class="modal-btn modal-btn-primary" disabled>
+            <span class="btn-text">Add Selected</span>
+        </button>
+    </footer>
+</div>

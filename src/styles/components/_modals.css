@@ -1,0 +1,160 @@
+/* /src/styles/components/_modals.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 550px;
+    background: var(--bg-gradient-end);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: popUp 0.3s ease-out;
+    position: relative;
+    z-index: 1;
+    background-clip: padding-box;
+}
+
+.modal-container-wide {
+    max-width: 950px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.modal-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.modal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.modal-col-left, .modal-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-col-right {
+    background: rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--card-border);
+}
+
+/* AI Suggestions in Modal */
+#ai-suggestions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ai-suggestion-group {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+    animation: fadeIn 0.5s;
+}
+.ai-suggestion-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.ai-suggestion-list {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.suggested-item {
+    background: rgba(0,0,0,0.3);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+.suggested-item span {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.suggested-item button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+#add-container-theme-preview .settings-section-title {
+    margin-bottom: 1rem;
+    border: none;
+    padding: 0;
+}
+#add-container-theme-preview.settings-section {
+    padding: 0;
+    background: none;
+    border: none;
+}

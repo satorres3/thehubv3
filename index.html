@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Tech</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.14.0",
+        "@azure/msal-browser": "https://esm.sh/@azure/msal-browser@^4.20.0",
+        "vite": "https://esm.sh/vite@^7.1.2",
+        "process": "https://esm.sh/process@^0.11.10",
+        "vite-plugin-static-copy": "https://esm.sh/vite-plugin-static-copy@^3.1.1",
+        "@azure/functions": "https://esm.sh/@azure/functions@^4.7.2-preview",
+        "crypto": "https://esm.sh/crypto@^1.0.1",
+        "@azure/msal-node": "https://esm.sh/@azure/msal-node@^3.7.1",
+        "cookie": "https://esm.sh/cookie@^1.0.2"
+      }
+    }
+    </script>
+    <script type="module" src="/index.tsx"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root">
+        <main id="app-root"></main>
+
+        <!-- MODALS & PERSISTENT UI -->
+        <div id="add-container-modal" class="modal-overlay hidden"></div>
+        <div id="function-runner-modal" class="modal-overlay hidden"></div>
+        <div id="delete-confirm-modal" class="modal-overlay hidden"></div>
+        <div id="sharepoint-picker-modal" class="modal-overlay hidden"></div>
+        <div id="toast-notification" class="toast"></div>
+        <div id="cookie-consent-banner" class="cookie-banner hidden">
+            <p>This website uses cookies to ensure you get the best experience. <a id="privacy-policy-link" href="#" target="_blank">Learn more</a>.</p>
+            <button id="accept-cookies-btn" class="modal-btn modal-btn-primary">Accept</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<div id="settings-detail-page" class="page-view">
+     <header class="app-header">
+        <div class="header-left">
+             <button id="back-to-container-management-btn" class="header-icon-btn" aria-label="Back to Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+             <span id="settings-detail-title" class="header-title">Edit Workspace</span>
+        </div>
+        <div class="header-right">
+            <button class="back-to-hub-btn header-icon-btn" aria-label="Go to Hub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </button>
+        </div>
+    </header>
+    <div id="settings-form-container" class="settings-container">
+        <nav id="settings-tabs" class="settings-tabs">
+            <button class="tab-link active" data-tab="general">General</button>
+            <button class="tab-link" data-tab="customization">Customization</button>
+            <button class="tab-link" data-tab="appearance">Appearance</button>
+            <button class="tab-link" data-tab="apps">Apps & Functions</button>
+            <button class="tab-link" data-tab="integrations">Integrations</button>
+            <button class="tab-link" data-tab="knowledge">Knowledge</button>
+            <button class="tab-link" data-tab="security">Security</button>
+        </nav>
+
+        <div class="settings-panels">
+            <div id="tab-panel-general" class="tab-panel active">
+                <div class="settings-section">
+                    <div class="settings-subsection">
+                        <h3 class="settings-subsection-title">Core Details</h3>
+                        <div class="form-group">
+                            <label for="edit-container-name" class="form-label">Workspace Name</label>
+                            <input type="text" id="edit-container-name" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-container-desc" class="form-label">Description</label>
+                            <textarea id="edit-container-desc" class="form-textarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Icon</label>
+                            <div id="edit-container-icon-selector" class="icon-selector-grid"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-custom-icon-upload" class="form-label">Upload Custom Icon</label>
+                            <div class="custom-icon-uploader">
+                                <img id="edit-custom-icon-preview" src="" alt="Custom icon preview" class="custom-icon-preview hidden">
+                                <button type="button" id="edit-custom-icon-btn" class="modal-btn modal-btn-secondary">Choose Image...</button>
+                                <input type="file" id="edit-custom-icon-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/svg+xml">
+                            </div>
+                            <p class="form-help-text">This icon appears on the assistant's welcome screen and in settings.</p>
+                        </div>
+                    </div>
+                    <div class="settings-subsection">
+                         <h3 class="settings-subsection-title">Visual Identity</h3>
+                         <div class="form-group">
+                            <label class="form-label">Card Background Image</label>
+                            <div class="card-image-selector">
+                                <div id="card-image-options-list" class="icon-selector-grid"></div>
+                                <img id="edit-card-image-preview" src="" alt="Card image preview" class="card-image-preview hidden">
+                                <button type="button" id="edit-card-image-btn" class="modal-btn modal-btn-secondary">Upload Custom Image...</button>
+                                <input type="file" id="edit-card-image-upload" class="hidden" accept="image/png, image/jpeg, image/webp">
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-panel-customization" class="tab-panel">
+                <div class="settings-section">
+                    <div class="settings-section-header">
+                        <h2 class="settings-section-title">Quick Questions</h2>
+                        <button id="suggest-questions-btn" class="suggest-ai-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM19 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            <span>Suggest with AI</span>
+                        </button>
+                    </div>
+                    <div id="quick-questions-list" class="managed-list"></div>
+                    <form id="add-quick-question-form" class="add-item-form">
+                        <input type="text" id="new-quick-question-input" class="form-input" placeholder="Add a new question..." required>
+                        <button type="submit" class="modal-btn modal-btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="settings-section">
+                    <div class="settings-section-header">
+                        <h2 class="settings-section-title">Personas</h2>
+                        <button id="suggest-personas-btn" class="suggest-ai-btn">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM19 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            <span>Suggest with AI</span>
+                        </button>
+                    </div>
+                     <p class="settings-section-description">Add custom system prompts for the AI. Users can select these from the dropdown in the chat.</p>
+                    <div id="personas-list" class="managed-list"></div>
+                     <form id="add-persona-form" class="add-item-form">
+                        <textarea id="new-persona-input" class="form-textarea" placeholder="Add a new persona prompt..." required rows="2"></textarea>
+                        <button type="submit" class="modal-btn modal-btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+            <div id="tab-panel-appearance" class="tab-panel">
+                <div class="appearance-layout">
+                    <div class="appearance-controls">
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">User Message</h3>
+                            <div class="color-picker-grid">
+                               <div class="form-group">
+                                    <label for="user-bg-color" class="form-label">Background</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="user-bg-color" class="form-input-color">
+                                        <input type="text" id="user-bg-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user-text-color" class="form-label">Text</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="user-text-color" class="form-input-color">
+                                        <input type="text" id="user-text-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">Assistant Message</h3>
+                            <div class="color-picker-grid">
+                                <div class="form-group">
+                                    <label for="bot-bg-color" class="form-label">Background</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="bot-bg-color" class="form-input-color">
+                                        <input type="text" id="bot-bg-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bot-text-color" class="form-label">Text</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="bot-text-color" class="form-input-color">
+                                        <input type="text" id="bot-text-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">Workspace</h3>
+                            <div class="color-picker-grid">
+                                <div class="form-group">
+                                    <label for="bg-gradient-start-color" class="form-label">Background Start</label>
+                                     <div class="color-picker-group">
+                                        <input type="color" id="bg-gradient-start-color" class="form-input-color">
+                                        <input type="text" id="bg-gradient-start-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bg-gradient-end-color" class="form-label">Background End</label>
+                                     <div class="color-picker-group">
+                                        <input type="color" id="bg-gradient-end-color" class="form-input-color">
+                                        <input type="text" id="bg-gradient-end-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-subsection">
+                            <h3 class="settings-subsection-title">Sidebar</h3>
+                            <div class="color-picker-grid">
+                                <div class="form-group">
+                                    <label for="sidebar-bg-color" class="form-label">Background</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="sidebar-bg-color" class="form-input-color">
+                                        <input type="text" id="sidebar-bg-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sidebar-text-color" class="form-label">Text</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="sidebar-text-color" class="form-input-color">
+                                        <input type="text" id="sidebar-text-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sidebar-highlight-bg-color" class="form-label">Highlight</label>
+                                    <div class="color-picker-group">
+                                        <input type="color" id="sidebar-highlight-bg-color" class="form-input-color">
+                                        <input type="text" id="sidebar-highlight-bg-color-text" class="form-input color-hex-text" size="7" maxlength="7">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appearance-preview-container wide">
+                        <div class="settings-section">
+                            <h2 class="settings-section-title">Live Preview</h2>
+                            <div id="appearance-preview" class="appearance-preview wide">
+                                <div class="preview-bot-message">Hello! How can I help you today?</div>
+                                <div class="preview-user-message">Tell me about this feature.</div>
+                            </div>
+                            <div id="sidebar-preview" class="sidebar-preview">
+                                <div class="preview-sidebar-link active">Active Item</div>
+                                <div class="preview-sidebar-link">Another Item</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-panel-apps" class="tab-panel">
+                <div class="settings-section">
+                    <h2 class="settings-section-title">Functions</h2>
+                    <p class="settings-section-description">AI-powered tools tailored for this workspace. Describe a function you need, and AI will build it.</p>
+                    <div id="functions-list" class="managed-list"></div>
+                    <form id="add-function-form" class="add-item-form">
+                        <input type="text" id="new-function-input" class="form-input" placeholder="e.g., 'A tool to draft outreach emails'" required>
+                        <button type="submit" id="generate-function-btn" class="modal-btn modal-btn-primary suggest-ai-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM19 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            <span>Generate with AI</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+             <div id="tab-panel-integrations" class="tab-panel">
+                <div class="settings-section">
+                    <h2 class="settings-section-title">Integrations</h2>
+                    <p class="settings-section-description">Activate globally enabled integrations for this workspace. They will appear in the sidebar.</p>
+                    <div id="container-integrations-list" class="checkbox-list">
+                        <!-- Dynamically populated list of available integrations -->
+                    </div>
+                </div>
+            </div>
+            <div id="tab-panel-knowledge" class="tab-panel">
+                <div class="settings-section">
+                     <h2 class="settings-section-title">Knowledge Base</h2>
+                    <p class="settings-section-description">Manage the files this assistant uses for context. All uploaded files will be sent to the model with every request.</p>
+                    <button id="manage-knowledge-btn" class="modal-btn modal-btn-primary">Manage Knowledge Files</button>
+                </div>
+            </div>
+            <div id="tab-panel-security" class="tab-panel">
+                <div class="settings-section">
+                    <h2 class="settings-section-title">Knowledge Base Visibility</h2>
+                    <div class="form-group-row">
+                        <div>
+                            <label for="is-knowledge-public" class="toggle-switch-label">Make Knowledge Base Public</label>
+                            <p class="form-help-text">If enabled, users can see the "Knowledge" tab and upload files. The AI uses the knowledge base for answers regardless of this setting.</p>
+                        </div>
+                        <label class="toggle-switch"><input type="checkbox" id="is-knowledge-public"><span class="slider"></span></label>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h2 class="settings-section-title">Access Control</h2>
+                    <p class="settings-section-description">Enter user emails or group names that can access this workspace.</p>
+                    <div id="access-control-list" class="managed-list"></div>
+                     <form id="add-accessor-form" class="add-item-form">
+                        <input type="text" id="new-accessor-input" class="form-input" placeholder="e.g., admin@company.com" required>
+                        <button type="submit" class="modal-btn modal-btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="settings-section">
+                    <h2 class="settings-section-title">Available Models</h2>
+                    <div id="available-models-list" class="managed-list">
+                        <!-- This will be populated dynamically -->
+                    </div>
+                </div>
+                 <div class="settings-section danger-zone">
+                    <h2 class="settings-section-title">Danger Zone</h2>
+                    <div class="danger-zone-content">
+                        <div>
+                            <strong>Delete this workspace</strong>
+                            <p>Once you delete a workspace, there is no going back. Please be certain.</p>
+                        </div>
+                        <button id="delete-container-btn" type="button" class="modal-btn btn-danger">Delete Workspace</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <footer class="settings-footer">
+            <button type="button" id="cancel-settings-btn" class="modal-btn modal-btn-secondary">Cancel</button>
+            <button type="button" id="save-settings-btn" class="modal-btn modal-btn-primary" disabled>Save Changes</button>
+        </footer>
+    </div>
+</div>

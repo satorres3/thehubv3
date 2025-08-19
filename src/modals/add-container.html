@@ -1,0 +1,87 @@
+<div class="modal-container modal-container-wide">
+    <header class="modal-header">
+        <h2 class="modal-title">Add New Workspace</h2>
+        <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+    </header>
+    <form id="add-container-form">
+        <div class="modal-body modal-layout">
+            <!-- Left Column: Main Inputs -->
+            <div class="modal-col-left">
+                <div class="form-group">
+                    <label for="container-name-input" class="form-label">Workspace Name</label>
+                    <input type="text" id="container-name-input" class="form-input" placeholder="e.g., Marketing Team" required minlength="3">
+                    <p class="form-help-text">A unique name for your workspace.</p>
+                </div>
+                <div class="form-group">
+                    <label for="container-type-select" class="form-label">Workspace Type</label>
+                    <select id="container-type-select" class="form-input">
+                        <option value="department">Department</option>
+                        <option value="product">Product/Service</option>
+                    </select>
+                </div>
+                <div id="container-website-group" class="form-group hidden">
+                    <label for="container-website-input" class="form-label">Product/Service Website URL</label>
+                    <input type="url" id="container-website-input" class="form-input" placeholder="https://example.com">
+                    <p class="form-help-text">The AI will use this website to generate better suggestions.</p>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="generate-ai-btn" class="modal-btn modal-btn-primary suggest-ai-btn" disabled>
+                        <span>Suggest with AI</span>
+                         <div class="thinking-loader hidden">
+                            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                        </div>
+                    </button>
+                    <p class="form-help-text">Let AI suggest a description, icon, theme, and more based on the name.</p>
+                </div>
+                <div class="ai-status-container">
+                    <div id="ai-status-spinner" class="spinner hidden"></div>
+                    <p id="ai-status-text" class="form-help-text"></p>
+                </div>
+            </div>
+            <!-- Right Column: AI Suggestions -->
+            <div id="ai-suggestions-container" class="modal-col-right hidden">
+                 <div class="form-group">
+                    <label for="container-desc-input" class="form-label">Description</label>
+                    <textarea id="container-desc-input" class="form-textarea" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Icon</label>
+                    <div id="container-icon-selector" class="icon-selector-grid">
+                        <!-- Icons will be populated by JS -->
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="add-custom-icon-upload" class="form-label">Upload Custom Icon</label>
+                    <div class="custom-icon-uploader">
+                        <img id="add-custom-icon-preview" src="" alt="Custom icon preview" class="custom-icon-preview hidden">
+                        <button type="button" id="add-custom-icon-btn" class="modal-btn modal-btn-secondary">Choose...</button>
+                        <input type="file" id="add-custom-icon-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/svg+xml">
+                    </div>
+                </div>
+                <div id="add-container-theme-preview" class="settings-section">
+                    <h2 class="settings-section-title">Theme Preview</h2>
+                    <div class="appearance-preview">
+                        <div class="preview-bot-message">Hello!</div>
+                        <div class="preview-user-message">Hi there.</div>
+                    </div>
+                </div>
+                <div id="suggested-questions-group" class="ai-suggestion-group">
+                    <label class="ai-suggestion-label">Suggested Questions</label>
+                    <ul id="suggested-questions-list" class="ai-suggestion-list"></ul>
+                </div>
+                 <div id="suggested-personas-group" class="ai-suggestion-group">
+                    <label class="ai-suggestion-label">Suggested Personas</label>
+                    <ul id="suggested-personas-list" class="ai-suggestion-list"></ul>
+                </div>
+                 <div id="suggested-apps-group" class="ai-suggestion-group">
+                    <label class="ai-suggestion-label">Suggested Apps</label>
+                    <ul id="suggested-apps-list" class="ai-suggestion-list"></ul>
+                </div>
+            </div>
+        </div>
+        <footer class="modal-footer">
+            <button id="cancel-container-btn" type="button" class="modal-btn modal-btn-secondary">Cancel</button>
+            <button id="create-container-btn" type="submit" class="modal-btn modal-btn-primary" disabled>Create Workspace</button>
+        </footer>
+    </form>
+</div>

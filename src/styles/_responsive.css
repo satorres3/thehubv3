@@ -1,0 +1,81 @@
+/* /src/styles/_responsive.css */
+
+@media (min-width: 992px) {
+    #container-page.sidebar-open .container-page-container,
+    .container-page-container {
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+    }
+
+    .container-sidebar {
+        transform: translateX(0);
+    }
+    
+    #container-page .header-left #sidebar-toggle-btn {
+        display: none;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .appearance-layout {
+        grid-template-columns: 1fr;
+    }
+    .appearance-preview-container .settings-section {
+        position: static;
+    }
+    .modal-layout {
+        grid-template-columns: 1fr;
+    }
+    .modal-col-right {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hub-container, .settings-container, .modal-container, .knowledge-container {
+        padding: 2rem 1rem;
+        max-width: 100%;
+    }
+    #settings-form-container {
+        padding: 0;
+    }
+    
+    .container-main-content {
+        padding: 1rem;
+    }
+
+    .hub-title, .settings-title {
+        font-size: 2rem;
+    }
+
+    .header-title {
+        font-size: 1.1rem;
+    }
+    #container-page .header-title {
+        display: none; /* Hide title on small screens to save space */
+    }
+
+    .chat-message {
+      max-width: 90%;
+    }
+    .user-message { padding-right: 1.25rem; }
+    .bot-message { padding-left: 1.25rem; }
+    .copy-btn { display: none; }
+
+    .danger-zone-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .welcome-questions {
+        grid-template-columns: 1fr;
+    }
+    .settings-footer {
+        padding: 1.5rem 1rem;
+    }
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}

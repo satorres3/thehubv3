@@ -1,0 +1,218 @@
+/* /src/styles/layout/_layout.css */
+
+.page-view {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Global App Header */
+.app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 100;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-logo.small {
+    width: 32px;
+    height: 32px;
+}
+.app-logo.small img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-title {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Container Sidebar */
+.container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--card-border);
+    padding: 2rem 1.5rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+#container-page.sidebar-open .container-sidebar {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+
+#sidebar-container-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+
+.sidebar-nav {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+.sidebar-nav li:hover .delete-chat-btn {
+    opacity: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    color: var(--sidebar-text);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+}
+.sidebar-link:hover, .sidebar-link.active {
+    background-color: var(--sidebar-highlight-bg);
+    color: var(--text-primary);
+}
+.sidebar-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+#sidebar-history-list .sidebar-link span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1.5rem;
+}
+
+.delete-chat-btn {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--sidebar-text);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, color 0.2s;
+    padding: 0.25rem;
+}
+.delete-chat-btn:hover {
+    color: var(--danger-color);
+}
+
+
+.new-chat-btn {
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    justify-content: flex-start;
+}
+.new-chat-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--card-hover-border);
+}
+
+
+.sidebar-section {
+    margin-top: 2rem;
+}
+.sidebar-section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sidebar-text);
+    text-transform: uppercase;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+
+.container-page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transition: margin-left 0.3s ease-in-out;
+    padding-top: var(--header-height);
+}
+
+.container-main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Appearance Tab */
+.appearance-layout {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+#global-settings-page .appearance-layout {
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.appearance-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.appearance-preview-container .settings-section {
+    position: sticky;
+    top: 2rem;
+    padding: 1.5rem;
+}
+
+.appearance-preview-container.wide {
+    width: 100%;
+}

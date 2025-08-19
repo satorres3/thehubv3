@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "APP_URI": "http://localhost:5173",
+    "MSAL_CLIENT_ID": "YOUR_MSAL_CLIENT_ID",
+    "MSAL_TENANT_ID": "YOUR_MSAL_TENANT_ID",
+    "MSAL_CLIENT_SECRET": "YOUR_MSAL_CLIENT_SECRET",
+    "GEMINI_API_KEY": "YOUR_GEMINI_API_KEY",
+    "SESSION_SECRET": "REPLACE_THIS_WITH_A_LONG_RANDOM_32_CHAR_STRING",
+    "DEFAULT_LOG_LEVEL": "Information"
+  }
+}
